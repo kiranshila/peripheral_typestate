@@ -106,6 +106,7 @@ where
 {
     pub fn pins(&mut self) -> Option<Pins<'_, BUS>> {
         if self.has_pins {
+            self.has_pins = false;
             Some(pins::Pins::new(&self.bus))
         } else {
             None
